@@ -18,7 +18,6 @@
 */
 package com.erp.masterdata.vendor.dao.model;
 
-
 public class MdVendorCO extends MdVendor implements java.io.Serializable {
 
   // serialVersionUID

@@ -18,7 +18,6 @@
 */
 package com.erp.order.po.dao.model;
 
-
 public class PoLineCO extends PoLine implements java.io.Serializable {
 
   // serialVersionUID

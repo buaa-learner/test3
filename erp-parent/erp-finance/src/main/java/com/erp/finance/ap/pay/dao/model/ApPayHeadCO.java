@@ -18,7 +18,6 @@
 */
 package com.erp.finance.ap.pay.dao.model;
 
-
 public class ApPayHeadCO extends ApPayHead implements java.io.Serializable {
 
   // serialVersionUID

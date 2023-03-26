@@ -18,7 +18,6 @@
 */
 package com.erp.finance.ap.pay.dao.model;
 
-
 public class ApPayLineCO extends ApPayLine implements java.io.Serializable {
 
   // serialVersionUID

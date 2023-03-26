@@ -18,7 +18,6 @@
 */
 package com.erp.masterdata.customer.dao.model;
 
-
 public class MdCustomerLicenseCO extends MdCustomerLicense implements java.io.Serializable {
 
   // serialVersionUID

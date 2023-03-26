@@ -18,7 +18,6 @@
 */
 package com.erp.finance.ap.invoice.dao;
 
-
 import com.erp.finance.ap.invoice.dao.model.ApInvoiceHead;
 import com.erp.finance.ap.invoice.dao.model.ApInvoiceHeadCO;
 import com.framework.api.DaoCRUDIF;

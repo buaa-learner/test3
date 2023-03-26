@@ -18,7 +18,6 @@
 */
 package com.erp.masterdata.project.dao.model;
 
-
 public class MdProjectCO extends MdProject implements java.io.Serializable {
 
   // serialVersionUID

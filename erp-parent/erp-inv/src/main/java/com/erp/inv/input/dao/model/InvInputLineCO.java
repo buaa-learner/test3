@@ -18,7 +18,6 @@
 */
 package com.erp.inv.input.dao.model;
 
-
 public class InvInputLineCO extends InvInputLine implements java.io.Serializable {
 
   // serialVersionUID

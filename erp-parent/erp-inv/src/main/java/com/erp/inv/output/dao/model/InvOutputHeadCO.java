@@ -18,7 +18,6 @@
 */
 package com.erp.inv.output.dao.model;
 
-
 public class InvOutputHeadCO extends InvOutputHead implements java.io.Serializable {
 
   // serialVersionUID

@@ -18,7 +18,6 @@
 */
 package com.erp.permission.dao.model;
 
-
 public class SysAuthCO extends SysAuth implements java.io.Serializable {
 
   // serialVersionUID

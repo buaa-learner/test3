@@ -18,7 +18,6 @@
 */
 package com.erp.masterdata.subject.dao.model;
 
-
 public class MdFinanceSubjectCO extends MdFinanceSubject implements java.io.Serializable {
 
   // serialVersionUID

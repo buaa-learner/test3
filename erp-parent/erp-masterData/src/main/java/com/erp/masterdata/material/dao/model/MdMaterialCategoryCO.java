@@ -18,7 +18,6 @@
 */
 package com.erp.masterdata.material.dao.model;
 
-
 public class MdMaterialCategoryCO extends MdMaterialCategory implements java.io.Serializable {
 
   // serialVersionUID

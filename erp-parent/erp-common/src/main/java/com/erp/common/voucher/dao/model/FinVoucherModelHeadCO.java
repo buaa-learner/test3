@@ -18,7 +18,6 @@
 */
 package com.erp.common.voucher.dao.model;
 
-
 public class FinVoucherModelHeadCO extends FinVoucherModelHead implements java.io.Serializable {
 
   // serialVersionUID

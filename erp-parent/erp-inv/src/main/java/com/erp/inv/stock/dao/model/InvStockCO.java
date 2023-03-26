@@ -18,7 +18,6 @@
 */
 package com.erp.inv.stock.dao.model;
 
-
 public class InvStockCO extends InvStock implements java.io.Serializable {
 
   // serialVersionUID

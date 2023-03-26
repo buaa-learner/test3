@@ -18,7 +18,6 @@
 */
 package com.erp.order.poa.dao.model;
 
-
 public class PoAgreementLineCO extends PoAgreementLine implements java.io.Serializable {
 
   // serialVersionUID

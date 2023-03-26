@@ -18,7 +18,6 @@
 */
 package com.erp.inv.warehouse.dao.model;
 
-
 public class InvWarehouseCO extends InvWarehouse implements java.io.Serializable {
 
   // serialVersionUID

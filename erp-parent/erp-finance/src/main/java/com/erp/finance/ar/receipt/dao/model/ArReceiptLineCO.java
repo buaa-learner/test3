@@ -18,7 +18,6 @@
 */
 package com.erp.finance.ar.receipt.dao.model;
 
-
 public class ArReceiptLineCO extends ArReceiptLine implements java.io.Serializable {
 
   // serialVersionUID

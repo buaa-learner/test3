@@ -18,7 +18,6 @@
 */
 package com.erp.order.so.dao.model;
 
-
 public class SoHeadCO extends SoHead implements java.io.Serializable {
 
   // serialVersionUID

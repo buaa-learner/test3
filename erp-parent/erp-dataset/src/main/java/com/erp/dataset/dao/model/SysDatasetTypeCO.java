@@ -18,7 +18,6 @@
 */
 package com.erp.dataset.dao.model;
 
-
 public class SysDatasetTypeCO extends SysDatasetType implements java.io.Serializable {
 
   // serialVersionUID

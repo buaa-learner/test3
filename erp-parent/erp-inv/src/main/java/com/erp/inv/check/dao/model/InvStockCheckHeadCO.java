@@ -18,7 +18,6 @@
 */
 package com.erp.inv.check.dao.model;
 
-
 public class InvStockCheckHeadCO extends InvStockCheckHead implements java.io.Serializable {
 
   // serialVersionUID

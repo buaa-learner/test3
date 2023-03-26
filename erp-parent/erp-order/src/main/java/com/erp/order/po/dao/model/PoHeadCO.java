@@ -18,7 +18,6 @@
 */
 package com.erp.order.po.dao.model;
 
-
 public class PoHeadCO extends PoHead implements java.io.Serializable {
 
   // serialVersionUID

@@ -18,7 +18,6 @@
 */
 package com.erp.hr.dao.model;
 
-
 public class HrStaffDepartmentRCO extends HrStaffDepartmentR implements java.io.Serializable {
 
   // serialVersionUID

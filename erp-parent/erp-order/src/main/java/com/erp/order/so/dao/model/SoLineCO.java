@@ -18,7 +18,6 @@
 */
 package com.erp.order.so.dao.model;
 
-
 public class SoLineCO extends SoLine implements java.io.Serializable {
 
   // serialVersionUID

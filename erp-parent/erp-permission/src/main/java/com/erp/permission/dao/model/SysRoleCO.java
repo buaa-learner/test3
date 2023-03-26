@@ -18,7 +18,6 @@
 */
 package com.erp.permission.dao.model;
 
-
 public class SysRoleCO extends SysRole implements java.io.Serializable {
 
   // serialVersionUID

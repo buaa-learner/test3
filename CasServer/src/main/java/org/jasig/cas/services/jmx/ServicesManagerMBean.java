@@ -28,13 +28,15 @@ import org.springframework.jmx.export.annotation.ManagedResource;
  * @author Scott Battaglia
  * @since 3.4.4
  */
-
-@ManagedResource(objectName = "CAS:name=JasigCasServicesManagerMBean",
-        description = "Exposes the services management tool via JMX", log = true, logFile="jasig_cas_jmx.logger",
-        currencyTimeLimit = 15)
+@ManagedResource(
+    objectName = "CAS:name=JasigCasServicesManagerMBean",
+    description = "Exposes the services management tool via JMX",
+    log = true,
+    logFile = "jasig_cas_jmx.logger",
+    currencyTimeLimit = 15)
 public final class ServicesManagerMBean extends AbstractServicesManagerMBean<ServicesManager> {
 
-    public ServicesManagerMBean(final ServicesManager servicesManager) {
-        super(servicesManager);
-    }
+  public ServicesManagerMBean(final ServicesManager servicesManager) {
+    super(servicesManager);
+  }
 }

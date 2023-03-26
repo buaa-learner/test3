@@ -19,7 +19,6 @@
 package org.jasig.cas.logout;
 
 import java.io.Serializable;
-
 import org.jasig.cas.authentication.principal.SingleLogoutService;
 
 /**
@@ -30,43 +29,43 @@ import org.jasig.cas.authentication.principal.SingleLogoutService;
  */
 public final class LogoutRequest implements Serializable {
 
-    /** Generated serialVersionUID. */
-    private static final long serialVersionUID = -6411421298859045022L;
+  /** Generated serialVersionUID. */
+  private static final long serialVersionUID = -6411421298859045022L;
 
-    /** The service ticket id. */
-    private final String ticketId;
+  /** The service ticket id. */
+  private final String ticketId;
 
-    /** The service. */
-    private final SingleLogoutService service;
+  /** The service. */
+  private final SingleLogoutService service;
 
-    /** The status of the logout request. */
-    private LogoutRequestStatus status = LogoutRequestStatus.NOT_ATTEMPTED;
+  /** The status of the logout request. */
+  private LogoutRequestStatus status = LogoutRequestStatus.NOT_ATTEMPTED;
 
-    /**
-     * Build a logout request from ticket identifier and service.
-     * Default status is {@link LogoutRequestStatus#NOT_ATTEMPTED}.
-     *
-     * @param ticketId the service ticket id.
-     * @param service the service.
-     */
-    public LogoutRequest(final String ticketId, final SingleLogoutService service) {
-        this.ticketId = ticketId;
-        this.service = service;
-    }
+  /**
+   * Build a logout request from ticket identifier and service. Default status is {@link
+   * LogoutRequestStatus#NOT_ATTEMPTED}.
+   *
+   * @param ticketId the service ticket id.
+   * @param service the service.
+   */
+  public LogoutRequest(final String ticketId, final SingleLogoutService service) {
+    this.ticketId = ticketId;
+    this.service = service;
+  }
 
-    public LogoutRequestStatus getStatus() {
-        return status;
-    }
+  public LogoutRequestStatus getStatus() {
+    return status;
+  }
 
-    public void setStatus(final LogoutRequestStatus status) {
-        this.status = status;
-    }
+  public void setStatus(final LogoutRequestStatus status) {
+    this.status = status;
+  }
 
-    public String getTicketId() {
-        return ticketId;
-    }
+  public String getTicketId() {
+    return ticketId;
+  }
 
-    public SingleLogoutService getService() {
-        return service;
-    }
+  public SingleLogoutService getService() {
+    return service;
+  }
 }

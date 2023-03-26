@@ -22,18 +22,16 @@ import java.util.Map;
  * @description
  * @date 2020年7月27日
  * @author dongbin
- * 
  */
 public class GlobalDataBox {
-    
-    //获取审批状态
-    public static Map<String, String> getApproveStatusMap(){
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("UNSUBMIT", "未提交");
-        map.put("SUBMIT", "已提交");
-        map.put("APPROVE", "已审批");
-        map.put("REJECT", "已驳回");
-        return map;
-    }
 
+  // 获取审批状态
+  public static Map<String, String> getApproveStatusMap() {
+    Map<String, String> map = new HashMap<String, String>();
+    map.put("UNSUBMIT", "未提交");
+    map.put("SUBMIT", "已提交");
+    map.put("APPROVE", "已审批");
+    map.put("REJECT", "已驳回");
+    return map;
+  }
 }

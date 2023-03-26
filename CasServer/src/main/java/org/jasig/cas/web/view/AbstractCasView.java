@@ -19,7 +19,6 @@
 package org.jasig.cas.web.view;
 
 import java.util.Map;
-
 import org.jasig.cas.validation.Assertion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,10 +32,10 @@ import org.springframework.web.servlet.view.AbstractView;
  */
 public abstract class AbstractCasView extends AbstractView {
 
-    /** Logger instance. **/
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+  /** Logger instance. * */
+  protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    protected final Assertion getAssertionFrom(final Map<String, Object> model) {
-        return (Assertion) model.get("assertion");
-    }
+  protected final Assertion getAssertionFrom(final Map<String, Object> model) {
+    return (Assertion) model.get("assertion");
+  }
 }

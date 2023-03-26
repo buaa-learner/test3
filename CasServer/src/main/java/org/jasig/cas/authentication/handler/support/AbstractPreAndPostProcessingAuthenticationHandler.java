@@ -19,77 +19,72 @@
 package org.jasig.cas.authentication.handler.support;
 
 import java.security.GeneralSecurityException;
-
+import javax.security.auth.login.FailedLoginException;
 import org.jasig.cas.authentication.AbstractAuthenticationHandler;
-import org.jasig.cas.authentication.HandlerResult;
 import org.jasig.cas.authentication.Credential;
+import org.jasig.cas.authentication.HandlerResult;
 import org.jasig.cas.authentication.PreventedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.security.auth.login.FailedLoginException;
-
 /**
  * Abstract authentication handler that allows deployers to utilize the bundled
- * AuthenticationHandlers while providing a mechanism to perform tasks before
- * and after authentication.
+ * AuthenticationHandlers while providing a mechanism to perform tasks before and after
+ * authentication.
  *
  * @author Scott Battaglia
  * @author Marvin S. Addison
- *
  * @since 3.1
  */
-public abstract class AbstractPreAndPostProcessingAuthenticationHandler extends AbstractAuthenticationHandler {
+public abstract class AbstractPreAndPostProcessingAuthenticationHandler
+    extends AbstractAuthenticationHandler {
 
-    /** Instance of logging for subclasses. */
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+  /** Instance of logging for subclasses. */
+  protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    /**
-     * Template method to perform arbitrary pre-authentication actions.
-     *
-     * @param credential the Credential supplied
-     * @return true if authentication should continue, false otherwise.
-     */
-    protected boolean preAuthenticate(final Credential credential) {
-        return true;
+  /**
+   * Template method to perform arbitrary pre-authentication actions.
+   *
+   * @param credential the Credential supplied
+   * @return true if authentication should continue, false otherwise.
+   */
+  protected boolean preAuthenticate(final Credential credential) {
+    return true;
+  }
+
+  /**
+   * Template method to perform arbitrary post-authentication actions.
+   *
+   * @param credential the supplied credential
+   * @param result the result of the authentication attempt.
+   * @return An authentication handler result that MAY be different or modified from that provided.
+   */
+  protected HandlerResult postAuthenticate(
+      final Credential credential, final HandlerResult result) {
+    return result;
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public final HandlerResult authenticate(final Credential credential)
+      throws GeneralSecurityException, PreventedException {
+
+    if (!preAuthenticate(credential)) {
+      throw new FailedLoginException();
     }
 
-    /**
-     * Template method to perform arbitrary post-authentication actions.
-     *
-     * @param credential the supplied credential
-     * @param result the result of the authentication attempt.
-     *
-     * @return An authentication handler result that MAY be different or modified from that provided.
-     */
-    protected HandlerResult postAuthenticate(final Credential credential, final HandlerResult result) {
-        return result;
-    }
+    return postAuthenticate(credential, doAuthentication(credential));
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public final HandlerResult authenticate(final Credential credential)
-            throws GeneralSecurityException, PreventedException {
-
-        if (!preAuthenticate(credential)) {
-            throw new FailedLoginException();
-        }
-
-        return postAuthenticate(credential, doAuthentication(credential));
-    }
-
-    /**
-     * Performs the details of authentication and returns an authentication handler result on success.
-     *
-     *
-     * @param credential Credential to authenticate.
-     *
-     * @return Authentication handler result on success.
-     *
-     * @throws GeneralSecurityException On authentication failure that is thrown out to the caller of
-     * {@link #authenticate(org.jasig.cas.authentication.Credential)}.
-     * @throws PreventedException On the indeterminate case when authentication is prevented.
-     */
-    protected abstract HandlerResult doAuthentication(final Credential credential)
-            throws GeneralSecurityException, PreventedException;
+  /**
+   * Performs the details of authentication and returns an authentication handler result on success.
+   *
+   * @param credential Credential to authenticate.
+   * @return Authentication handler result on success.
+   * @throws GeneralSecurityException On authentication failure that is thrown out to the caller of
+   *     {@link #authenticate(org.jasig.cas.authentication.Credential)}.
+   * @throws PreventedException On the indeterminate case when authentication is prevented.
+   */
+  protected abstract HandlerResult doAuthentication(final Credential credential)
+      throws GeneralSecurityException, PreventedException;
 }

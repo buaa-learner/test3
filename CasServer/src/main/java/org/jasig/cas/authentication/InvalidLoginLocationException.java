@@ -22,21 +22,21 @@ import java.io.Serializable;
 import javax.security.auth.login.AccountException;
 
 /**
- * Describes an error condition where authentication occurs from a location that is disallowed by security policy
- * applied to the underlying user account.
+ * Describes an error condition where authentication occurs from a location that is disallowed by
+ * security policy applied to the underlying user account.
  *
  * @author Marvin S. Addison
  * @version 4.0
  */
 public class InvalidLoginLocationException extends AccountException implements Serializable {
 
-    private static final long serialVersionUID = 5745711263227480194L;
+  private static final long serialVersionUID = 5745711263227480194L;
 
-    public InvalidLoginLocationException() {
-        super();
-    }
+  public InvalidLoginLocationException() {
+    super();
+  }
 
-    public InvalidLoginLocationException(final String message) {
-        super(message);
-    }
+  public InvalidLoginLocationException(final String message) {
+    super(message);
+  }
 }

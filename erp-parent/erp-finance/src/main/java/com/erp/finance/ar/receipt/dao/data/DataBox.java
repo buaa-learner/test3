@@ -16,10 +16,9 @@
 /**
  * @description DataBox.java
  * @author dongbin
- * @version 
+ * @version
  * @copyright
  */
-
 package com.erp.finance.ar.receipt.dao.data;
 
 import java.util.LinkedHashMap;
@@ -29,15 +28,13 @@ import java.util.Map;
  * @description
  * @date 2020年9月15日
  * @author dongbin
- * 
  */
 public class DataBox {
-    
-    //获取收款类型
-    public static Map<String, String> getArReceiptType(){
-        Map<String, String> map = new LinkedHashMap<String, String>();
-        map.put("MONEY", "现金/银行");
-        return map;
-    }
 
+  // 获取收款类型
+  public static Map<String, String> getArReceiptType() {
+    Map<String, String> map = new LinkedHashMap<String, String>();
+    map.put("MONEY", "现金/银行");
+    return map;
+  }
 }

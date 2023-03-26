@@ -19,7 +19,6 @@
 package org.jasig.cas.web.support;
 
 import javax.servlet.http.HttpServletRequest;
-
 import org.jasig.cas.authentication.principal.WebApplicationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,24 +28,22 @@ import org.slf4j.LoggerFactory;
  *
  * @author Scott Battaglia
  * @since 3.1.2
- *
  */
-public abstract class AbstractArgumentExtractor implements
-    ArgumentExtractor {
+public abstract class AbstractArgumentExtractor implements ArgumentExtractor {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    public final WebApplicationService extractService(final HttpServletRequest request) {
-        final WebApplicationService service = extractServiceInternal(request);
+  public final WebApplicationService extractService(final HttpServletRequest request) {
+    final WebApplicationService service = extractServiceInternal(request);
 
-        if (service == null) {
-            logger.debug("Extractor did not generate service.");
-        } else {
-            logger.debug("Extractor generated service for: {}", service.getId());
-        }
-
-        return service;
+    if (service == null) {
+      logger.debug("Extractor did not generate service.");
+    } else {
+      logger.debug("Extractor generated service for: {}", service.getId());
     }
 
-    protected abstract WebApplicationService extractServiceInternal(final HttpServletRequest request);
+    return service;
+  }
+
+  protected abstract WebApplicationService extractServiceInternal(final HttpServletRequest request);
 }

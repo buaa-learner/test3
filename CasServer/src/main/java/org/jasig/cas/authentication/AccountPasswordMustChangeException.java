@@ -21,21 +21,20 @@ package org.jasig.cas.authentication;
 import javax.security.auth.login.CredentialExpiredException;
 
 /**
- * Describes an authentication error condition where a user account's password must change before login.
+ * Describes an authentication error condition where a user account's password must change before
+ * login.
  *
  * @author Misagh Moayyed
  * @since 4.0
  */
 public class AccountPasswordMustChangeException extends CredentialExpiredException {
 
-    /** Serialization metadata. */
-    private static final long serialVersionUID = 7487835035108753209L;
+  /** Serialization metadata. */
+  private static final long serialVersionUID = 7487835035108753209L;
 
-    public AccountPasswordMustChangeException() {
-    }
+  public AccountPasswordMustChangeException() {}
 
-    public AccountPasswordMustChangeException(final String msg) {
-        super(msg);
-    }
-
+  public AccountPasswordMustChangeException(final String msg) {
+    super(msg);
+  }
 }

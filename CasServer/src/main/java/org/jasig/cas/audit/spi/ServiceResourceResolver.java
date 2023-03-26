@@ -18,26 +18,24 @@
  */
 package org.jasig.cas.audit.spi;
 
-import org.aspectj.lang.JoinPoint;
 import com.github.inspektr.audit.spi.AuditResourceResolver;
+import org.aspectj.lang.JoinPoint;
 import org.jasig.cas.authentication.principal.Service;
 import org.jasig.cas.util.AopUtils;
 
 /**
- *
  * @author Scott Battaglia
  * @since 3.1.2
- *
  */
 public final class ServiceResourceResolver implements AuditResourceResolver {
 
-    public String[] resolveFrom(final JoinPoint joinPoint, final Object retval) {
-        final Service service = (Service) AopUtils.unWrapJoinPoint(joinPoint).getArgs()[1];
-        return new String[] {retval.toString() + " for " + service.getId()};
-    }
+  public String[] resolveFrom(final JoinPoint joinPoint, final Object retval) {
+    final Service service = (Service) AopUtils.unWrapJoinPoint(joinPoint).getArgs()[1];
+    return new String[] {retval.toString() + " for " + service.getId()};
+  }
 
-    public String[] resolveFrom(final JoinPoint joinPoint, final Exception ex) {
-        final Service service = (Service) AopUtils.unWrapJoinPoint(joinPoint).getArgs()[1];
-        return new String[] {service.getId()};
-    }
+  public String[] resolveFrom(final JoinPoint joinPoint, final Exception ex) {
+    final Service service = (Service) AopUtils.unWrapJoinPoint(joinPoint).getArgs()[1];
+    return new String[] {service.getId()};
+  }
 }

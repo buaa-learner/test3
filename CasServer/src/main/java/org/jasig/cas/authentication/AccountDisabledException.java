@@ -21,20 +21,20 @@ package org.jasig.cas.authentication;
 import javax.security.auth.login.AccountException;
 
 /**
- * Describes an authentication error condition where a user account has been administratively disabled.
+ * Describes an authentication error condition where a user account has been administratively
+ * disabled.
  *
  * @author Marvin S. Addison
  * @since 4.0
  */
 public class AccountDisabledException extends AccountException {
 
-    /** Serialization metadata. */
-    private static final long serialVersionUID = 7487835035108753209L;
+  /** Serialization metadata. */
+  private static final long serialVersionUID = 7487835035108753209L;
 
-    public AccountDisabledException() {
-    }
+  public AccountDisabledException() {}
 
-    public AccountDisabledException(final String msg) {
-        super(msg);
-    }
+  public AccountDisabledException(final String msg) {
+    super(msg);
+  }
 }

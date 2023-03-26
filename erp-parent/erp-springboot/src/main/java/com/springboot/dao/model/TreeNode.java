@@ -20,68 +20,74 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
-
 /**
  * @description
  * @date 2020年7月6日
  * @author dongbin
- * 
  */
 public class TreeNode implements Serializable {
-    
-    //节点id
-    private String id;
-    //节点编码
-    private String code;
-    //节点名称
-    private String text;
-    //节点类型
-    private String type;
-    //节点展开或收起状态
-    private Map state;
-    //子节点
-    private List<TreeNode> children = new ArrayList<TreeNode>();
-    
-    
-    /*
-     * setter,getter方法
-     */
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getText() {
-        return text;
-    }
-    public void setText(String text) {
-        this.text = text;
-    }
-    public String getType() {
-        return type;
-    }
-    public void setType(String type) {
-        this.type = type;
-    }
-    public String getCode() {
-        return code;
-    }
-    public void setCode(String code) {
-        this.code = code;
-    }
-    public List<TreeNode> getChildren() {
-        return children;
-    }
-    public void setChildren(List<TreeNode> children) {
-        this.children = children;
-    }
-    public Map getState() {
-        return state;
-    }
-    public void setState(Map state) {
-        this.state = state;
-    }
-    
+
+  // 节点id
+  private String id;
+  // 节点编码
+  private String code;
+  // 节点名称
+  private String text;
+  // 节点类型
+  private String type;
+  // 节点展开或收起状态
+  private Map state;
+  // 子节点
+  private List<TreeNode> children = new ArrayList<TreeNode>();
+
+  /*
+   * setter,getter方法
+   */
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+  public List<TreeNode> getChildren() {
+    return children;
+  }
+
+  public void setChildren(List<TreeNode> children) {
+    this.children = children;
+  }
+
+  public Map getState() {
+    return state;
+  }
+
+  public void setState(Map state) {
+    this.state = state;
+  }
 }

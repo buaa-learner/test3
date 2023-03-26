@@ -19,7 +19,6 @@
 package org.jasig.cas.authentication;
 
 import java.io.Serializable;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -32,121 +31,121 @@ import javax.validation.constraints.Size;
  */
 public class UsernamePasswordCredential implements Credential, Serializable {
 
-    /** Unique ID for serialization. */
-    private static final long serialVersionUID = -700605081472810939L;
+  /** Unique ID for serialization. */
+  private static final long serialVersionUID = -700605081472810939L;
 
-    /** Password suffix appended to username in string representation. */
-    private static final String PASSWORD_SUFFIX = "+password";
+  /** Password suffix appended to username in string representation. */
+  private static final String PASSWORD_SUFFIX = "+password";
 
-    /** The username. */
-    @NotNull
-    @Size(min=1, message = "required.username")
-    private String username;
+  /** The username. */
+  @NotNull
+  @Size(min = 1, message = "required.username")
+  private String username;
 
-    /** The password. */
-    @NotNull
-    @Size(min=1, message = "required.password")
-    private String password;
-    
-    /** The orgcode. */
-    @NotNull
-    @Size(min=1, message = "required.orgcode")
-    private String orgcode;
+  /** The password. */
+  @NotNull
+  @Size(min = 1, message = "required.password")
+  private String password;
 
-    /** Default constructor. */
-    public UsernamePasswordCredential() {}
+  /** The orgcode. */
+  @NotNull
+  @Size(min = 1, message = "required.orgcode")
+  private String orgcode;
 
-    /**
-     * Creates a new instance with the given username and password.
-     *
-     * @param userName Non-null user name.
-     * @param password Non-null password.
-     */
-    public UsernamePasswordCredential(final String userName, final String password,final String orgcode) {
-        this.username = userName;
-        this.password = password;
-        this.orgcode=orgcode;
+  /** Default constructor. */
+  public UsernamePasswordCredential() {}
+
+  /**
+   * Creates a new instance with the given username and password.
+   *
+   * @param userName Non-null user name.
+   * @param password Non-null password.
+   */
+  public UsernamePasswordCredential(
+      final String userName, final String password, final String orgcode) {
+    this.username = userName;
+    this.password = password;
+    this.orgcode = orgcode;
+  }
+
+  /**
+   * @return Returns the password.
+   */
+  public final String getPassword() {
+    return this.password;
+  }
+
+  /**
+   * @param password The password to set.
+   */
+  public final void setPassword(final String password) {
+    this.password = password;
+  }
+
+  /**
+   * @return Returns the userName.
+   */
+  public final String getUsername() {
+    return this.username;
+  }
+
+  /**
+   * @param userName The userName to set.
+   */
+  public final void setUsername(final String userName) {
+    this.username = userName;
+  }
+
+  public String getOrgcode() {
+    return orgcode;
+  }
+
+  public void setOrgcode(final String orgcode) {
+    this.orgcode = orgcode;
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public String getId() {
+    return this.username;
+  }
+
+  @Override
+  public String toString() {
+    // return this.username + PASSWORD_SUFFIX+"+"+orgcode;
+    return this.username + PASSWORD_SUFFIX;
+  }
+
+  @Override
+  public boolean equals(final Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
 
-    /**
-     * @return Returns the password.
-     */
-    public final String getPassword() {
-        return this.password;
+    UsernamePasswordCredential that = (UsernamePasswordCredential) o;
+
+    if (password != null ? !password.equals(that.password) : that.password != null) {
+      return false;
     }
 
-    /**
-     * @param password The password to set.
-     */
-    public final void setPassword(final String password) {
-        this.password = password;
+    if (username != null ? !username.equals(that.username) : that.username != null) {
+      return false;
     }
 
-    /**
-     * @return Returns the userName.
-     */
-    public final String getUsername() {
-        return this.username;
+    if (orgcode != null ? !orgcode.equals(that.orgcode) : that.orgcode != null) {
+      return false;
     }
+    return true;
+  }
 
-    /**
-     * @param userName The userName to set.
-     */
-    public final void setUsername(final String userName) {
-        this.username = userName;
-    }
-    
-    
-    public String getOrgcode() {
-		return orgcode;
-	}
-
-	public void setOrgcode(final String orgcode) {
-		this.orgcode = orgcode;
-	}
-
-	/** {@inheritDoc} */
-    @Override
-    public String getId() {
-        return this.username;
-    }
-
-    @Override
-    public String toString() {
-        //return this.username + PASSWORD_SUFFIX+"+"+orgcode;
-        return this.username + PASSWORD_SUFFIX;
-    }
-
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        UsernamePasswordCredential that = (UsernamePasswordCredential) o;
-
-        if (password != null ? !password.equals(that.password) : that.password != null) {
-            return false;
-        }
-
-        if (username != null ? !username.equals(that.username) : that.username != null) {
-            return false;
-        }
-
-        if (orgcode != null ? !orgcode.equals(that.orgcode) : that.orgcode != null) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = username != null ? username.hashCode() : 0;
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (orgcode != null ? orgcode.hashCode() : 0);
-        return result;
-    }
+  @Override
+  public int hashCode() {
+    int result = username != null ? username.hashCode() : 0;
+    result = 31 * result + (password != null ? password.hashCode() : 0);
+    result = 31 * result + (orgcode != null ? orgcode.hashCode() : 0);
+    return result;
+  }
 }

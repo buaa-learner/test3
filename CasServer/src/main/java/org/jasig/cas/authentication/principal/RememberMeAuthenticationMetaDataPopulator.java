@@ -29,17 +29,16 @@ import org.jasig.cas.authentication.RememberMeCredential;
  *
  * @author Scott Battaglia
  * @since 3.2.1
- *
  */
-public final class RememberMeAuthenticationMetaDataPopulator implements
-    AuthenticationMetaDataPopulator {
+public final class RememberMeAuthenticationMetaDataPopulator
+    implements AuthenticationMetaDataPopulator {
 
-    public void populateAttributes(final AuthenticationBuilder builder, final Credential credential) {
-        if (credential instanceof RememberMeCredential) {
-            final RememberMeCredential r = (RememberMeCredential) credential;
-            if (r.isRememberMe()) {
-                builder.addAttribute(RememberMeCredential.AUTHENTICATION_ATTRIBUTE_REMEMBER_ME, true);
-            }
-        }
+  public void populateAttributes(final AuthenticationBuilder builder, final Credential credential) {
+    if (credential instanceof RememberMeCredential) {
+      final RememberMeCredential r = (RememberMeCredential) credential;
+      if (r.isRememberMe()) {
+        builder.addAttribute(RememberMeCredential.AUTHENTICATION_ATTRIBUTE_REMEMBER_ME, true);
+      }
     }
+  }
 }

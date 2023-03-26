@@ -21,22 +21,22 @@ package org.jasig.cas.authentication.principal;
 import org.jasig.cas.authentication.Credential;
 
 /**
- * Provides the most basic means of principal resolution by mapping
- * {@link org.jasig.cas.authentication.Credential#getId()} onto
- * {@link org.jasig.cas.authentication.principal.Principal#getId()}.
+ * Provides the most basic means of principal resolution by mapping {@link
+ * org.jasig.cas.authentication.Credential#getId()} onto {@link
+ * org.jasig.cas.authentication.principal.Principal#getId()}.
  *
  * @author Marvin S. Addison
  * @since 4.0
  */
 public class BasicPrincipalResolver implements PrincipalResolver {
 
-    @Override
-    public Principal resolve(final Credential credential) {
-        return new SimplePrincipal(credential.getId());
-    }
+  @Override
+  public Principal resolve(final Credential credential) {
+    return new SimplePrincipal(credential.getId());
+  }
 
-    @Override
-    public boolean supports(final Credential credential) {
-        return credential.getId() != null;
-    }
+  @Override
+  public boolean supports(final Credential credential) {
+    return credential.getId() != null;
+  }
 }

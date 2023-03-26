@@ -19,7 +19,6 @@
 package org.jasig.cas.web.support;
 
 import javax.servlet.http.HttpServletRequest;
-
 import org.jasig.cas.authentication.principal.SimpleWebApplicationServiceImpl;
 import org.jasig.cas.authentication.principal.WebApplicationService;
 
@@ -31,7 +30,7 @@ import org.jasig.cas.authentication.principal.WebApplicationService;
  */
 public final class CasArgumentExtractor extends AbstractArgumentExtractor {
 
-    public WebApplicationService extractServiceInternal(final HttpServletRequest request) {
-        return SimpleWebApplicationServiceImpl.createServiceFrom(request);
-    }
+  public WebApplicationService extractServiceInternal(final HttpServletRequest request) {
+    return SimpleWebApplicationServiceImpl.createServiceFrom(request);
+  }
 }

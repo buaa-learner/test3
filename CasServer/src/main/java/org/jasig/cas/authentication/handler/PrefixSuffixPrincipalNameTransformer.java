@@ -24,37 +24,35 @@ package org.jasig.cas.authentication.handler;
  *
  * @author Howard Gilbert
  * @author Scott Battaglia
-
  * @since 3.3.6
  */
-
 public final class PrefixSuffixPrincipalNameTransformer implements PrincipalNameTransformer {
 
-    private String prefix;
+  private String prefix;
 
-    private String suffix;
+  private String suffix;
 
-    public String transform(final String formUserId) {
-        final StringBuilder stringBuilder = new StringBuilder();
+  public String transform(final String formUserId) {
+    final StringBuilder stringBuilder = new StringBuilder();
 
-        if (this.prefix != null) {
-            stringBuilder.append(this.prefix);
-        }
-
-        stringBuilder.append(formUserId);
-
-        if (this.suffix != null) {
-            stringBuilder.append(this.suffix);
-        }
-
-        return stringBuilder.toString();
+    if (this.prefix != null) {
+      stringBuilder.append(this.prefix);
     }
 
-    public void setPrefix(final String prefix) {
-        this.prefix = prefix;
+    stringBuilder.append(formUserId);
+
+    if (this.suffix != null) {
+      stringBuilder.append(this.suffix);
     }
 
-    public void setSuffix(final String suffix) {
-        this.suffix = suffix;
-    }
+    return stringBuilder.toString();
+  }
+
+  public void setPrefix(final String prefix) {
+    this.prefix = prefix;
+  }
+
+  public void setSuffix(final String suffix) {
+    this.suffix = suffix;
+  }
 }
